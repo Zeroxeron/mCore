@@ -1,0 +1,17 @@
+# by x_Kiva_x, 2025
+#  __  __  _____               
+# |  \/  |/ ____|              
+# | \  / | |     ___  _ __ ___ 
+# | |\/| | |    / _ \| '__/ _ \
+# | |  | | |___| (_) | | |  __/
+# |_|  |_|\_____\___/|_|  \___|
+#
+
+global:
+  PREFIX: "&dMC"
+
+messages:
+  noPerm: "&cNo permission!"
+  error: "&cAn error occurred while performing this action!"
+
+debug: false

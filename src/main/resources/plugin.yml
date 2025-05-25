@@ -1,0 +1,6 @@
+name: mCore
+version: '1.0.5'
+main: org.kiva.mCore.MCore
+api-version: '1.21'
+commands:
+  mcore: {}
