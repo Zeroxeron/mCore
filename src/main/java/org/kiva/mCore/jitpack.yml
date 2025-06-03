@@ -1,6 +1,0 @@
-jdk:
-  - openjdk21
-
-install:
-  - MAVEN_VERSION=3.6.0
-  - mvn -Dmaven.compiler.source=21 -Dmaven.compiler.target=21 install

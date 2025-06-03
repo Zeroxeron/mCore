@@ -1,0 +1,6 @@
+jdk:
+  - openjdk21
+
+install:
+  - export MAVEN_VERSION=3.8.8
+  - mvn install
