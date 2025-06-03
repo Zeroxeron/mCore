@@ -12,7 +12,7 @@ import org.kiva.mCore.MCore;
 import java.util.ArrayList;
 import java.util.List;
 import static org.kiva.mCore.api.Config.PREFIX;
-import static org.kiva.mCore.api.Notifications.SendMsg;
+import static org.kiva.mCore.api.Notifications.Msg;
 
 
 public class Cmd extends Cmd_Abstract {
@@ -21,11 +21,12 @@ public class Cmd extends Cmd_Abstract {
     public Cmd() {super("MCore");}
 
     public void execute(CommandSender sender, String label, String[] args) {
-        if (!sender.hasPermission("MCore.admin")) {SendMsg(sender, MsgNoPerm); return;}
+        if (!sender.hasPermission("MCore.admin")) {
+            Msg(sender, MsgNoPerm); return;}
 
         if (args.length == 0) {
-            SendMsg(sender, ChatColor.GOLD +""+ChatColor.BOLD+ChatColor.ITALIC +"MCore "+MCore.instance.getDescription().getVersion());
-            SendMsg(sender, "/" + label + " reload");
+            Msg(sender, ChatColor.GOLD +""+ChatColor.BOLD+ChatColor.ITALIC +"MCore "+MCore.instance.getDescription().getVersion());
+            Msg(sender, "/" + label + " reload");
             return;
         }
         if (args[0].equalsIgnoreCase("reload")) {
@@ -36,7 +37,7 @@ public class Cmd extends Cmd_Abstract {
             return;
         }
         if (args[0].equalsIgnoreCase("version")) {
-            SendMsg(sender, PREFIX +MCore.instance.getDescription().getVersion());
+            Msg(sender, PREFIX +MCore.instance.getDescription().getVersion());
         }
     }
 

@@ -18,8 +18,8 @@ public class Notifications {
      * Creates a message notification.
      * @param msg Text to make the notification of.
      */
-    public static void CreateNotification(String msg, MsgModes mode){
-        msg = r(PREFIX + "&8 > &7" + msg);
+    public static void Notification(String msg, MsgModes mode){
+        msg = r(msg);
         switch (mode){
             case MsgModes.PLAYERS: // Players only
                 for(Player player : Bukkit.getOnlinePlayers()){
@@ -51,27 +51,23 @@ public class Notifications {
         }
     }
 
-    public static void SendMsg(CommandSender sender, String msg){
-        if(sender.hasPermission("MCore.notify")) {
-            sender.sendMessage(r(msg));
-        }
+    public static void Msg(CommandSender p, String msg){
+        Msg((Player) p,msg);
     }
-    public static void SendMsgNoPrefix(CommandSender sender, String msg){
-        if(sender.hasPermission("MCore.notify")) {
-            sender.sendMessage(r(msg));
-        }
+
+    public static void Msg(Player p, String msg){
+        p.sendMessage(r(msg));
     }
-    public static void ComponentNP(CommandSender sender, BaseComponent component){
-        if(sender.hasPermission("MCore.notify")) {
-            if (sender instanceof Player pl) {
-                pl.spigot().sendMessage(component);
-            } else {
-                sender.sendMessage(component.toString());
-            }
+
+    public static void MsgBaseComponent(CommandSender sender, BaseComponent component){
+        if (sender instanceof Player pl) {
+            pl.spigot().sendMessage(component);
+        } else {
+            sender.sendMessage(component.toString());
         }
     }
 
-    public static void SendMsgComponent(CommandSender sender, String msg, ClickEvent.Action Click_Action , String Click_Action_Command, HoverEvent.Action Hover_Action, String Hover_Action_Text){
+    public static void MsgComponent(CommandSender sender, String msg, ClickEvent.Action Click_Action , String Click_Action_Command, HoverEvent.Action Hover_Action, String Hover_Action_Text){
         if (sender instanceof Player pl) {
             ComponentBuilder component =
                     new ComponentBuilder(msg)

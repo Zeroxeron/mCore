@@ -8,7 +8,7 @@
 #
 
 global:
-  PREFIX: "&dMC"
+  prefix: "&dMC"
 
 messages:
   noPerm: "&cNo permission!"
