@@ -1,5 +1,5 @@
 name: mCore
-version: '1.0.6'
+version: ${project.version}
 main: org.kiva.mCore.MCore
 api-version: '1.21'
 commands:
